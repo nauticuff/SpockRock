@@ -1,0 +1,27 @@
+body {
+  overflow: hidden;
+}
+body ::before {
+  content: "";
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background: url("../images/peaceHand.png") 0 0 repeat;
+  transform: rotate(-40.5deg);
+  background-size: 12.5rem;
+  opacity: 0.15;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrapper .title {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  transform: rotate(90deg);
+}/*# sourceMappingURL=main.css.map */
