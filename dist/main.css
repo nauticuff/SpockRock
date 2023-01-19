@@ -1,18 +1,10 @@
 body {
-  overflow: hidden;
-}
-body ::before {
-  content: "";
-  position: absolute;
-  height: 200%;
-  width: 200%;
-  top: -50%;
-  left: -50%;
-  z-index: -1;
-  background: url("../images/peaceHand.png") 0 0 repeat;
-  transform: rotate(-40.5deg);
-  background-size: 12.5rem;
-  opacity: 0.15;
+  background: url("../images/gridPeace.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -99;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 2rem;
 }
 
 .wrapper {
@@ -23,5 +15,106 @@ body ::before {
   display: flex;
   list-style: none;
   flex-direction: column;
-  transform: rotate(90deg);
+  text-align: right;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.wrapper .title .block {
+  color: white;
+}
+.wrapper .title .block::before {
+  content: "";
+  position: absolute;
+  width: 175px;
+  height: 60px;
+  z-index: -1;
+  background: rgb(0, 0, 0);
+  margin-left: -2rem;
+}
+.wrapper .home-select {
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.wrapper .home-select .col-6 {
+  background: black;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.wrapper .home-select .col-6:hover {
+  color: rgb(33, 33, 33);
+  background: #FFDC84;
+}
+.wrapper .rounds {
+  color: white;
+  background: #8FB7DC;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 5rem;
+  border-radius: 10px;
+}
+.wrapper .rounds div {
+  margin: 2rem auto;
+  background: black;
+  width: 15rem;
+  border-radius: 45px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.wrapper .rounds div:hover {
+  background: #4d4d4d;
+}
+.wrapper .back {
+  background: #FFDC84;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  margin: 1rem auto;
+  font-weight: 500;
+}
+.wrapper .back:hover {
+  background: #b9a643;
+  cursor: pointer;
+}
+.wrapper .choice {
+  display: none;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.wrapper .choice svg {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+}
+.wrapper .choice svg:hover {
+  cursor: pointer;
+  background: rgb(255, 161, 249);
+  border-radius: 50%;
+}
+
+.choice-one {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.choice-one svg {
+  box-shadow: 3px 2px 5px rgb(148, 148, 148);
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+}
+.choice-one svg:hover {
+  cursor: pointer;
+  background: rgb(255, 161, 249);
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
