@@ -95,7 +95,7 @@ body {
         }
     }
 
-    .choice {
+    .weaponChoice {
         display: none;
         justify-content: space-between;
         margin: 0 auto;
@@ -121,7 +121,7 @@ body {
         font-weight: 600;
         margin-top: 4rem;
         
-        .GoBack {
+        .GameGoBack {
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
@@ -132,13 +132,18 @@ body {
             padding: .5rem 2rem;
             text-align: right;
 
+            &:hover {
+                cursor: pointer;
+                background: #d4b15a;
+            }
+
             svg {
                 padding-right: 0;
                 width: fit-content;
             }
 
         }
-        .Reset {
+        .GameReset {
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
@@ -149,13 +154,18 @@ body {
             padding: .5rem 2rem;
             text-align: right;
 
+            &:hover {
+                cursor: pointer;
+                background: #ff7063;
+            }
+
             svg {
                 padding-right: 0;
                 width: fit-content;
             }
 
         }
-        .Home{
+        .GameHome{
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
@@ -164,6 +174,11 @@ body {
             border-radius: 5px;
             padding: .5rem 2rem;
             text-align: right;
+
+            &:hover {
+                cursor: pointer;
+                background: #417add;
+            }
 
             svg {
                 padding-right: 0;
@@ -180,12 +195,12 @@ body {
         text-align: center;
         padding: 3.25rem 1rem;
         background: #CFA3F2;
-        margin: 0 1rem;
+        margin: 0 .5rem;
         border-radius: 5px;
     }
 }
 
-.choice-one {
+.displayWeaponChoice {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -207,6 +222,33 @@ body {
     
 }
 
+.message {
+    display: none;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.798);
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transform: translateY(15rem);
+    animation: fadeIn 1.5s;
+}
+
+.displayMessage {
+    display: block;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.disabled {
+    pointer-events: none;
+}
 
 
 
