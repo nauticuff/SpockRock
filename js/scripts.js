@@ -63,17 +63,20 @@ function DisplayRounds(){
     
     let oneRound = document.getElementById('oneRound').addEventListener('click', () => {
         DisplayHome();
-        DisplaySVG()
+        DisplaySVG();
+        DisplayOptions();
     })
 
     let fiveRound = document.getElementById('fiveRound').addEventListener('click', () => {
         DisplayHome();
         DisplaySVG();
+        DisplayOptions();
     })
 
     let sevenRound = document.getElementById('sevenRound').addEventListener('click', () => {
         DisplayHome();
         DisplaySVG();
+        DisplayOptions();
     })
 
     backBtn.addEventListener('click', () => {
@@ -130,6 +133,11 @@ function DisplayResultPVP(){
 function DisplayResultPVC(){
 
 }
+
+function DisplayOptions(){
+    colorsBox.classList.add('colors-display');
+}
+
 
 // BEGIN FETCHING
 

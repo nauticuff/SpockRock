@@ -114,6 +114,75 @@ body {
             }
         }
     }
+
+    .colors {
+        display: none;
+        justify-content: center;
+        font-weight: 600;
+        margin-top: 4rem;
+        
+        .GoBack {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            background: #FFDC84;
+            margin-bottom: .5rem;
+            border-radius: 5px;
+            padding: .5rem 2rem;
+            text-align: right;
+
+            svg {
+                padding-right: 0;
+                width: fit-content;
+            }
+
+        }
+        .Reset {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            background: #FF8484;
+            margin-bottom: .5rem;
+            border-radius: 5px;
+            padding: .5rem 2rem;
+            text-align: right;
+
+            svg {
+                padding-right: 0;
+                width: fit-content;
+            }
+
+        }
+        .Home{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            background: #849FFF;
+            border-radius: 5px;
+            padding: .5rem 2rem;
+            text-align: right;
+
+            svg {
+                padding-right: 0;
+                width: fit-content;
+            }
+        }
+    }
+
+    .colors-display {
+        display: flex;
+    }
+
+    .score-box {
+        text-align: center;
+        padding: 3.25rem 1rem;
+        background: #CFA3F2;
+        margin: 0 1rem;
+        border-radius: 5px;
+    }
 }
 
 .choice-one {
