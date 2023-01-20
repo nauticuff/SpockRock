@@ -1,7 +1,40 @@
+@media only screen and (max-width: 500px) {
+
+    body {
+        width: 460px;
+
+        .wrapper {
+            #rock {
+                width: 125px;
+                height: 125px;
+            }
+            #paper {
+                width: 125px;
+                height: 125px;
+            }
+            #scissors {
+                width: 125px;
+                height: 125px;
+            }
+            #lizard {
+                width: 125px;
+                height: 125px;
+            }
+            #spock {
+                width: 125px;
+                height: 125px;
+            }
+
+            
+        }
+    }
+
+
+}
 
 body {
     background: url('../images/gridPeace.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     z-index: -99;
     font-family: 'Poppins', sans-serif;
@@ -11,7 +44,7 @@ body {
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    
+
 
     .title {
         display: flex;
@@ -23,7 +56,7 @@ body {
 
         .block {
             color: white;
-            
+
             &::before {
                 content: "";
                 position: absolute;
@@ -32,7 +65,7 @@ body {
                 z-index: -1;
                 background: rgb(0, 0, 0);
                 margin-left: -2rem;
-                
+
             }
         }
     }
@@ -47,6 +80,7 @@ body {
             width: fit-content;
             border-radius: 40px;
             padding: 1rem 2rem;
+            margin: 1rem 1em;
             cursor: pointer;
 
             &:hover {
@@ -55,7 +89,7 @@ body {
             }
         }
 
-        
+
     }
 
     .rounds {
@@ -65,18 +99,19 @@ body {
         margin: 0 auto;
         padding: 1rem 5rem;
         border-radius: 10px;
+        font-weight: 500;
 
         div {
-        margin: 2rem auto;
-        background: black;
-        width: 15rem;
-        border-radius: 45px;
-        padding: 1rem 2rem;
-        cursor: pointer;
+            margin: 2rem auto;
+            background: black;
+            width: 15rem;
+            border-radius: 45px;
+            padding: 1rem 2rem;
+            cursor: pointer;
 
-        &:hover {
-            background: #4d4d4d;
-        }
+            &:hover {
+                background: #4d4d4d;
+            }
 
         }
     }
@@ -87,7 +122,8 @@ body {
         padding: 1rem 2rem;
         border-radius: 5px;
         margin: 1rem auto;
-        font-weight: 500;
+        font-weight: 600;
+        
 
         &:hover {
             background: #b9a643;
@@ -101,7 +137,7 @@ body {
         margin: 0 auto;
 
         svg {
-            
+
             width: 200px;
             height: 200px;
             background: white;
@@ -120,7 +156,7 @@ body {
         justify-content: center;
         font-weight: 600;
         margin-top: 4rem;
-        
+
         .GameGoBack {
             display: flex;
             flex-wrap: nowrap;
@@ -143,6 +179,7 @@ body {
             }
 
         }
+
         .GameReset {
             display: flex;
             flex-wrap: nowrap;
@@ -165,7 +202,8 @@ body {
             }
 
         }
-        .GameHome{
+
+        .GameHome {
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
@@ -202,38 +240,128 @@ body {
 
 .displayWeaponChoice {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 auto;
+    flex-wrap: wrap;
 
-        svg {
-            box-shadow: 3px 2px 5px rgb(148, 148, 148);
-            width: 200px;
-            height: 200px;
-            background: white;
-            border-radius: 50%;
+    #rock {
+        box-shadow: 3px 2px 5px rgb(148, 148, 148);
+        width: 200px;
+        height: 200px;
+        background: #c83a46;
+        border-radius: 100%;
+        animation: slideDown .7s ease-in-out forwards;
+        opacity: 0;
 
-            &:hover {
-                cursor: pointer;
-                background: rgb(255, 161, 249);
-                border-radius: 50%;
-            }
+        path {
+            stroke: rgb(255, 255, 255);
         }
 
-    
+        &:hover {
+            cursor: pointer;
+            background: #353535;
+            border-radius: 50%;
+        }
+    }
+
+    #paper {
+        box-shadow: 3px 2px 5px rgb(148, 148, 148);
+        width: 200px;
+        height: 200px;
+        background: #64bb59;
+        border-radius: 50%;
+        animation: slideDown .7s ease-in-out forwards;
+        opacity: 0;
+
+        path {
+            stroke: rgb(255, 255, 255);
+        }
+
+        &:hover {
+            cursor: pointer;
+            background:  #353535;
+            border-radius: 50%;
+        }
+    }
+
+    #scissors {
+        box-shadow: 3px 2px 5px rgb(148, 148, 148);
+        width: 200px;
+        height: 200px;
+        background: #598dbb;
+        border-radius: 50%;
+        animation: slideDown .7s ease-in-out forwards;
+        opacity: 0;
+
+        path {
+            stroke: rgb(255, 255, 255);
+        }
+
+        &:hover {
+            cursor: pointer;
+            background:  #353535;
+            border-radius: 50%;
+        }
+    }
+
+    #lizard {
+        box-shadow: 3px 2px 5px rgb(148, 148, 148);
+        width: 200px;
+        height: 200px;
+        background: #cd9546;
+        border-radius: 50%;
+        animation: slideDown .7s ease-in-out forwards;
+        opacity: 0;
+
+        path {
+            stroke: rgb(255, 255, 255);
+        }
+
+        &:hover {
+            cursor: pointer;
+            background:  #353535;
+            border-radius: 50%;
+        }
+    }
+
+    #spock {
+        box-shadow: 3px 2px 5px rgb(148, 148, 148);
+        width: 200px;
+        height: 200px;
+        background: #ae59bb;
+        border-radius: 50%;
+        animation: slideDown .7s ease-in-out forwards;
+        opacity: 0;
+
+        path {
+            stroke: rgb(255, 255, 255);
+        }
+
+        &:hover {
+            cursor: pointer;
+            background:  #353535;
+            border-radius: 50%;
+        }
+    }
+
+
 }
 
 .message {
-    display: none;
+    position: absolute;
     text-align: center;
-    background: rgba(0, 0, 0, 0.798);
+    background: rgba(0, 0, 0, 0.946);
     color: white;
     font-size: 2rem;
     font-weight: 500;
-    width: fit-content;
+    //width: fit-content;
     margin: 0 auto;
     padding: 1rem 2rem;
     border-radius: 5px;
-    transform: translateY(15rem);
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //transform: translateY(15rem);
     animation: fadeIn 1.5s;
 }
 
@@ -242,14 +370,30 @@ body {
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-600px)
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 .disabled {
     pointer-events: none;
 }
 
-
-
-
+.animation-reset {
+    animation: none;
+}

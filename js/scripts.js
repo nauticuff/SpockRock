@@ -1,105 +1,176 @@
 
+//BEGIN PVP PORTION
+
+//END PVP PORTION
+
 
 //BEGIN HOME SCREEN
 let userWeapon = "";
-let isPVP 
+let isPVP
 let HomePage = document.getElementById('HomePage')
 
 let PVP = document.getElementById('PVP').addEventListener('click', () => {
+    isPVP = true;
     ClearHome();
     DisplayRounds();
-    isPVP = true;
 })
 
 let PVC = document.getElementById('PVC').addEventListener('click', () => {
+    isPVP = false;
     ClearHome();
     DisplayRounds();
-    isPVP = false;
+
 })
 
-let oneRoundPicked 
+let oneRoundPicked
 let fiveRoundPicked
 let sevenRoundPicked
 
-function Rock(){
-    if(oneRoundPicked == true && playerOneCount < playerTwoCount){
-        LossMessage.innerText = "Uh oh, you lost against a computer :(";
-        roundClicked.classList.add('disabled');
+function ScoreCompare() {
+    if (oneRoundPicked == true && playerOneCount < playerTwoCount) {
+        DisplayLossMessage();
+        if (isPVP == false) {
+            createLoss.textContent = "Uh oh, you lost against a computer :(";
+        } else if (isPVP == true) {
+            createLoss.textContent = "Player 2 wins the match!";
+        }
        
-    }else if(oneRoundPicked == true && playerOneCount > playerTwoCount){
-        WinMessage.innerText = "Hooray, you defeated the computer :D";
         roundClicked.classList.add('disabled');
+
+    } else if (oneRoundPicked == true && playerOneCount > playerTwoCount) {
+        DisplayWinMessage();
+        if (isPVP == false) {
+            createWin.textContent = "Hooray, you defeated the computer :D";
+        } else if (isPVP == true) {
+            createWin.textContent = "Player 1 wins the match!";
+        }
        
-    }else if(fiveRoundPicked == true && playerOneCount == 4){
-        WinMessage.innerText = "Hooray, you defeated the computer :D";
         roundClicked.classList.add('disabled');
+
+    } else if (fiveRoundPicked == true && playerOneCount == 4) {
+        DisplayWinMessage();
+        if (isPVP == false) {
+            createWin.textContent = "Hooray, you defeated the computer :D";
+        } else if (isPVP == true) {
+            createWin.textContent = "Player 1 wins the match!";
+        }
+       
+        roundClicked.classList.add('disabled');
+
+    } else if (fiveRoundPicked == true && playerTwoCount == 4) {
+        DisplayLossMessage();
+        if (isPVP == false) {
+            createLoss.textContent = "Uh oh, you lost against a computer :(";
+        } else if (isPVP == true) {
+            createLoss.textContent = "Player 2 wins the match!";
+        }
      
-    }else if(fiveRoundPicked == true && playerTwoCount == 4){
-        LossMessage.innerText = "Uh oh, you lost against a computer :(";
         roundClicked.classList.add('disabled');
 
-    }else if(sevenRoundPicked = true && playerOneCount == 5){
-        WinMessage.innerText = "Hooray, you defeated the computer :D";
+    } else if (sevenRoundPicked = true && playerOneCount == 5) {
+        DisplayWinMessage();
+        if (isPVP == false) {
+            createWin.textContent = "Hooray, you defeated the computer :D";
+        } else if (isPVP == true) {
+            createWin.textContent = "Player 1 wins the match!";
+        }
         roundClicked.classList.add('disabled');
 
-    }else if(sevenRoundPicked = true && playerTwoCount == 5){
-        LossMessage.innerText = "Uh oh, you lost against a computer :(";
+    } else if (sevenRoundPicked = true && playerTwoCount == 5) {
+        DisplayLossMessage();
+        if (isPVP == false) {
+            createLoss.textContent = "Uh oh, you lost against a computer :(";
+        } else if (isPVP == true) {
+            createLoss.textContent = "Player 2 wins The Match!";
+        }
         roundClicked.classList.add('disabled');
     }
 }
 
-// function Paper(){
-    
-// }
-
-// function Scissors(){
-
-// }
-
-// function Lizard(){
-
-// }
-
-// function Spock(){
-
-// }
 
 //BEGIN GAME WEAPON CHOICES
 
+let firstPlayerTurn = true;
+
 let rock = document.getElementById('rock').addEventListener('click', () => {
-    userWeapon = "Rock";
-    FetchWeapon();
-    Compare();
-    Rock();
-    
+    if (isPVP == false) {
+        userWeapon = "Rock";
+        FetchWeapon();
+        Compare();
+        ScoreCompare();
+    } else if (isPVP == true && firstPlayerTurn == true) {
+        userWeapon = "Rock";
+        firstPlayerTurn = false;
+    } else if (isPVP = true && firstPlayerTurn == false) {
+        cpuResponse = "Rock";
+        Compare();
+        ScoreCompare();
+    }
 })
 
 let paper = document.getElementById('paper').addEventListener('click', () => {
-    userWeapon = "Paper";
-    FetchWeapon();
-    Compare();
-    Rock();
+    if (isPVP == false) {
+        userWeapon = "Paper";
+        FetchWeapon();
+        Compare();
+        ScoreCompare();
+    }
+    else if (isPVP == true && firstPlayerTurn == true) {
+        userWeapon = "Paper";
+        firstPlayerTurn = false;
+    } else if (isPVP = true && firstPlayerTurn == false) {
+        cpuResponse = "Paper";
+        Compare();
+        ScoreCompare();
+    }
 })
 
 let scissors = document.getElementById('scissors').addEventListener('click', () => {
-    userWeapon = "Scissors";
-    FetchWeapon();
-    Compare();
-    Rock();
+    if (isPVP == false) {
+        userWeapon = "Scissors";
+        FetchWeapon();
+        Compare();
+        ScoreCompare();
+    } else if (isPVP == true && firstPlayerTurn == true) {
+        userWeapon = "Scissors";
+        firstPlayerTurn = false;
+    } else if (isPVP = true && firstPlayerTurn == false) {
+        cpuResponse = "Scissors";
+        Compare();
+        ScoreCompare();
+    }
 })
 
 let lizard = document.getElementById('lizard').addEventListener('click', () => {
-    userWeapon = "Lizard";
-    FetchWeapon();
-    Compare();
-    Rock();
+    if (isPVP == false) {
+        userWeapon = "Lizard";
+        FetchWeapon();
+        Compare();
+        ScoreCompare();
+    } else if (isPVP == true && firstPlayerTurn == true) {
+        userWeapon = "Lizard";
+        firstPlayerTurn = false;
+    } else if (isPVP = true && firstPlayerTurn == false) {
+        cpuResponse = "Lizard";
+        Compare();
+        ScoreCompare();
+    }
 })
 
 let spock = document.getElementById('spock').addEventListener('click', () => {
-    userWeapon = "Spock";
-    FetchWeapon();
-    Compare();
-    Rock();
+    if (isPVP == false) {
+        userWeapon = "Spock";
+        FetchWeapon();
+        Compare();
+        ScoreCompare();
+    } else if (isPVP == true && firstPlayerTurn == true) {
+        userWeapon = "Spock";
+        firstPlayerTurn = false;
+    } else if (isPVP = true && firstPlayerTurn == false) {
+        cpuResponse = "Spock";
+        Compare();
+        ScoreCompare();
+    }
 })
 
 // BEGIN GAME OPTION BUTTONS
@@ -113,10 +184,11 @@ let GameGoBackBtn = document.getElementById('GameGoBackBtn').addEventListener('c
     roundClicked.classList.remove('disabled');
     cpuWins();
     userWins();
-    
+
 })
 
 let GameResetBtn = document.getElementById('GameResetBtn').addEventListener('click', () => {
+    firstPlayerTurn = true;
     ResetCounter();
     roundClicked.classList.remove('disabled');
     cpuWins();
@@ -144,13 +216,11 @@ let cpuResponse = "";
 
 //BEGIN WIN, LOSS, TIE MESSAGE VARIABLES
 
-let WinMessage = document.getElementById('WinMessage')
-let LossMessage = document.getElementById('LossMessage')
-let TieMessage = document.getElementById('TieMessage')
+let wltMessage = document.getElementById('wltMessage')
 
 //BEGIN ALL FUNCTIONS (WILL ORGANIZE LATER PROBABLY)
 
-function DisplayRounds(){
+function DisplayRounds() {
     let r1 = document.createElement('div');
     r1.textContent = "1 Round";
     r1.id = "oneRound";
@@ -165,7 +235,7 @@ function DisplayRounds(){
 
     let roundsSub = document.createElement('div');
     roundsSub.className = "rounds text-center";
-    
+
     let backBtn = document.createElement('p')
     backBtn.className = "back";
     backBtn.id = "backBtn";
@@ -178,7 +248,9 @@ function DisplayRounds(){
 
     HomePage.appendChild(roundsSub);
     HomePage.appendChild(backBtn);
-    
+
+    console.log(isPVP);
+
     let oneRound = document.getElementById('oneRound').addEventListener('click', () => {
         ClearHome();
         DisplaySVG();
@@ -195,6 +267,7 @@ function DisplayRounds(){
         fiveRoundPicked = true;
         oneRoundPicked = false;
         sevenRoundPicked = false;
+
     })
 
     let sevenRound = document.getElementById('sevenRound').addEventListener('click', () => {
@@ -204,31 +277,19 @@ function DisplayRounds(){
         sevenRoundPicked = true;
         fiveRoundPicked = false;
         oneRoundPicked = false;
+
     })
 
     backBtn.addEventListener('click', () => {
         ClearHome();
         DisplayHome();
-
-        let PVP = document.getElementById('PVP').addEventListener('click', () => {
-            ClearHome();
-            DisplayRounds();
-            let isPVP = true;
-        })
-        
-        let PVC = document.getElementById('PVC').addEventListener('click', () => {
-            ClearHome();
-            DisplayRounds();
-            let isPVP = false;
-        })
-
     })
 
 }
 
-function DisplayHome(){
+function DisplayHome() {
     HomePage.className = "row home-select";
-    
+
     let pvpInject = document.createElement('div');
     pvpInject.id = "PVP";
     pvpInject.className = "col-6 text-center";
@@ -243,183 +304,187 @@ function DisplayHome(){
     HomePage.appendChild(pvcInject);
 
     let PVP = document.getElementById('PVP').addEventListener('click', () => {
+        isPVP = true;
         ClearHome();
         DisplayRounds();
     })
-    
+
     let PVC = document.getElementById('PVC').addEventListener('click', () => {
+        isPVP = false;
         ClearHome();
         DisplayRounds();
     })
 }
 
-function ClearHome(){
+function ClearHome() {
     HomePage.className = "";
     HomePage.innerHTML = "";
 }
 
-function DisplaySVG(){
+function DisplaySVG() {
     roundClicked.classList.remove('weaponChoice');
     roundClicked.classList.add('displayWeaponChoice');
 }
 
-function DisplayResultPVP(){
+function DisplayResultPVP() {
     roundClicked.classList.add('weaponChoice');
     roundClicked.classList.remove('displayWeaponChoice');
 
 }
 
-function DisplayOptions(){
+function DisplayOptions() {
     colorsBox.classList.add('colors-display');
 }
 
-function RemoveOptions(){
+function RemoveOptions() {
     colorsBox.classList.remove('colors-display');
 }
 
-function ResetCounter(){
+function ResetCounter() {
     playerOneCount = 0;
     playerTwoCount = 0;
     playerOneScore.innerText = playerOneCount;
     playerTwoScore.innerText = playerTwoCount;
-    //userWins();
-    //cpuWins();
     RemoveMessage();
-    ResetMessages();
-    
-    //if(fiveRoundPicked)
 }
 
-function userWins(){
+function userWins() {
     playerOneScore.textContent = playerOneCount++;
 }
 userWins();
 
-function  cpuWins(){
+function cpuWins() {
     playerTwoScore.textContent = playerTwoCount++;
 }
 cpuWins();
 
-function refreshPage(){
+function refreshPage() {
     window.location.reload();
-} 
-
-function DisplayWinMessage(){
-    WinMessage.classList.add('displayMessage');
 }
 
-function DisplayLossMessage(){
-    LossMessage.classList.add('displayMessage')
+let createWin = document.createElement('div');
+function DisplayWinMessage() {
+
+    createWin.classList = "message";
+    createWin.textContent = "You win. Keep going!";
+
+    if (isPVP == true) {
+        createWin.textContent = "Player 1 won that round!";
+    }
+
+    wltMessage.appendChild(createWin);
+    firstPlayerTurn = true;
 }
 
-function DisplayTieMessage(){
-    TieMessage.classList.add('displayMessage')
+let createLoss = document.createElement('div');
+function DisplayLossMessage() {
+
+    createLoss.classList = 'message';
+    createLoss.textContent = "You lose. Don't give up!";
+
+    if (isPVP == true) {
+        createLoss.textContent = "Player 2 won that round!";
+    }
+
+    wltMessage.appendChild(createLoss);
+    firstPlayerTurn = true;
 }
 
-function RemoveMessage(){
-    WinMessage.classList.remove('displayMessage');
-    LossMessage.classList.remove('displayMessage');
-    TieMessage.classList.remove('displayMessage');
+let createTie = document.createElement('div');
+function DisplayTieMessage() {
+
+    createTie.classList = 'message';
+    createTie.textContent = "It's a tie. Try again!";
+    wltMessage.appendChild(createTie);
+    firstPlayerTurn = true;
 }
 
-function ResetMessages(){
-    WinMessage.innerText = "You Win. Keep going!";
-    LossMessage.innerText = "You Lose. Don't give up!";
-    TieMessage.innerText = "It's a Tie. Try again!";
+function RemoveMessage() {
+    wltMessage.innerHTML = "";
 }
 
 //BEGIN FETCH
 
 setTimeout(() => FetchWeapon(), 50);
-function FetchWeapon(){
+function FetchWeapon() {
     fetch('https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption').then(response => response.text()
     ).then(data => {
         cpuResponse = data
     })
 }
 
-function Compare(){
-    if(userWeapon == "Rock" && (cpuResponse == "Lizard" || cpuResponse == "Scissors" )){
+function Compare() {
+    if (userWeapon == "Rock" && (cpuResponse == "Lizard" || cpuResponse == "Scissors")) {
+        userWins();
+        RemoveMessage();
+        DisplayWinMessage();
+    } else if (userWeapon == "Rock" && (cpuResponse == "Paper" || cpuResponse == "Spock")) {
+        cpuWins();
+        RemoveMessage();
+        DisplayLossMessage();
+    } else if (userWeapon == "Rock" && cpuResponse == "Rock") {
+        RemoveMessage();
+        DisplayTieMessage();
+    }
+
+    else if (userWeapon == "Paper" && (cpuResponse == "Rock" || cpuResponse == "Spock")) {
+        userWins();
+        RemoveMessage();
+        DisplayWinMessage();
+    } else if (userWeapon == "Paper" && (cpuResponse == "Lizard" || cpuResponse == "Scissors")) {
+        cpuWins();
+        RemoveMessage();
+        DisplayLossMessage();
+    } else if (userWeapon == "Paper" && cpuResponse == "Paper") {
+        RemoveMessage();
+        DisplayTieMessage();
+    }
+
+    else if (userWeapon == "Scissors" && (cpuResponse == "Lizard" || cpuResponse == "Paper")) {
+        userWins();
+        RemoveMessage();
+        DisplayWinMessage();
+    } else if (userWeapon == "Scissors" && (cpuResponse == "Rock" || cpuResponse == "Spock")) {
+        cpuWins();
+        RemoveMessage();
+        DisplayLossMessage();
+    } else if (userWeapon == "Scissors" && cpuResponse == "Scissors") {
+        RemoveMessage();
+        DisplayTieMessage();
+    }
+
+    else if (userWeapon == "Lizard" && (cpuResponse == "Spock" || cpuResponse == "Paper")) {
         userWins();
         RemoveMessage();
         DisplayWinMessage();
         //console.log("You Win!");
-    }else if(userWeapon == "Rock" && (cpuResponse == "Paper" || cpuResponse == "Spock")){
+    } else if (userWeapon == "Lizard" && (cpuResponse == "Rock" || cpuResponse == "Scissors")) {
         cpuWins();
         RemoveMessage();
         DisplayLossMessage();
         //console.log("You Lose!");
-    }else if(userWeapon == "Rock" && cpuResponse == "Rock"){
+    } else if (userWeapon == "Lizard" && cpuResponse == "Lizard") {
         RemoveMessage();
         DisplayTieMessage();
         //console.log("It's a tie!")
     }
-    
-    else if(userWeapon == "Paper" && (cpuResponse == "Rock" || cpuResponse == "Spock" )){
+
+    else if (userWeapon == "Spock" && (cpuResponse == "Rock" || cpuResponse == "Scissors")) {
         userWins();
         RemoveMessage();
         DisplayWinMessage();
         //console.log("You Win!");
-    }else if(userWeapon == "Paper" && (cpuResponse == "Lizard" || cpuResponse == "Scissors")){
+    } else if (userWeapon == "Spock" && (cpuResponse == "Paper" || cpuResponse == "Lizard")) {
         cpuWins();
         RemoveMessage();
         DisplayLossMessage();
         //console.log("You Lose!");
-    }else if(userWeapon == "Paper" && cpuResponse == "Paper"){
-        RemoveMessage();
-        DisplayTieMessage();
-        //console.log("It's a tie!")
-    }
-    
-    else if(userWeapon == "Scissors" && (cpuResponse == "Lizard" || cpuResponse == "Paper" )){
-        userWins();
-        RemoveMessage();
-        DisplayWinMessage();
-        //console.log("You Win!");
-    }else if(userWeapon == "Scissors" && (cpuResponse == "Rock" || cpuResponse == "Spock")){
-        cpuWins();
-        RemoveMessage();
-        DisplayLossMessage();
-        //console.log("You Lose!");
-        }else if(userWeapon == "Scissors" && cpuResponse == "Scissors"){
-        RemoveMessage();
-        DisplayTieMessage();
-        //console.log("It's a tie!")
-    }
-    
-    else if(userWeapon == "Lizard" && (cpuResponse == "Spock" || cpuResponse == "Paper" )){
-        userWins();
-        RemoveMessage();
-        DisplayWinMessage();
-        //console.log("You Win!");
-    }else if(userWeapon == "Lizard" && (cpuResponse == "Rock" || cpuResponse == "Scissors")){
-        cpuWins();
-        RemoveMessage();
-        DisplayLossMessage();
-        //console.log("You Lose!");
-        }else if(userWeapon == "Lizard" && cpuResponse == "Lizard"){
-        RemoveMessage();
-        DisplayTieMessage();
-        //console.log("It's a tie!")
-    }
-    
-    else if(userWeapon == "Spock" && (cpuResponse == "Rock" || cpuResponse == "Scissors" )){
-        userWins();
-        RemoveMessage();
-        DisplayWinMessage();
-        //console.log("You Win!");
-    }else if(userWeapon == "Spock" && (cpuResponse == "Paper" || cpuResponse == "Lizard")){
-        cpuWins();
-        RemoveMessage();
-        DisplayLossMessage();
-        //console.log("You Lose!");
-        }else if(userWeapon == "Spock" && cpuResponse == "Spock"){
+    } else if (userWeapon == "Spock" && cpuResponse == "Spock") {
         RemoveMessage();
         DisplayTieMessage();
         //console.log("It's a tie!")
     }
 }
-
 
 // BEGIN FETCHING
 
